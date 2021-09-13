@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Portfolio</title>
+
+    <script>
+        function recordContent() {
+            let list = document.querySelector("ol");
+            let contents = ["Item 1", "Item 2"];
+
+            for (let i = 0; i < contents.length; i++) {
+                let li = document.createElement('li');
+                li.innerHTML = contents[i];
+                list.appendChild(li);
+            }
+        }
+    </script>
+</head>
+<body>
+    <ol></ol>
+</body>
+</html>
