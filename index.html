@@ -8,18 +8,20 @@
 
     <script>
         function recordContent() {
-            let list = document.querySelector("ol");
-            let contents = ["Item 1", "Item 2"];
+            const contents = [1, 2];
 
             for (let i = 0; i < contents.length; i++) {
-                let li = document.createElement('li');
-                li.innerHTML = contents[i];
-                list.appendChild(li);
+
+                let list = document.createElement('li');
+                list.textContent = contents[i];
+                document.querySelector(".directory").appendChild(list);
             }
         }
+
+        recordContent();
     </script>
 </head>
 <body>
-    <ol></ol>
+    <ol class="directory"></ol>
 </body>
 </html>
