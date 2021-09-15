@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+}
+
+header {
+    color: #03254c;
+    background-color: #d9f1ff;
+    padding: 40px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+main {
+    padding: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ol li a {
+    text-decoration: none;
+}
+
+ol li a:hover {
+    color: #DC143C;
+    text-decoration: underline;
+}

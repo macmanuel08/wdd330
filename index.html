@@ -6,22 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WDD 330 Portfolio</title>
 
-    <script>
-        function recordContent() {
-            const contents = [1, 2];
+    <link rel="stylesheet" href="css/style.css">
 
-            for (let i = 0; i < contents.length; i++) {
-
-                let list = document.createElement('li');
-                list.textContent = contents[i];
-                document.querySelector(".directory").appendChild(list);
-            }
-        }
-
-        recordContent();
-    </script>
+    <script src="js/main.js"></script>
 </head>
 <body>
+    <header>
+        <h2>John Mark Manuel</h2>
+        <p>WDD 330 Portfolio</p>
+    </header>
+    <main>
+        <ol class="directory"></ol>
+    </main>
     <ol class="directory"></ol>
 </body>
 </html>
