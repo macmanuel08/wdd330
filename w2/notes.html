@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2</title>
+
+    <script src="js/basics.js" defer></script>
+    <style>
+        em {
+            color: crimson;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        section {
+            margin-top: 75px;
+        }
+
+        section p, section code, section em {
+            margin-top: 30px;
+            margin-left: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>Week 2 Notes</h2>
+
+    <section>
+        <h3>Local Scope and Global Scope Code Examples</h3>
+        <p>
+            Questions:<br>
+            When is the best time to use or declare a global scope variable?
+        </p>
+        <code style="background-color: rgba(255, 255, 168, 0.945); display: block;">
+            const a = 1;<br>
+            { const a = 3; console.log(a); }
+            <br>//Prints 3 because a is redeclared as a new and different variable that has a block scope and accessed inside its block
+            <br><br>console.log(a);
+            <br>// Prints 1 because it refers to the first declared variable which has a global scope.
+        </code>
+        <code style="background-color: rgb(173, 173, 255); display: block;">
+            let b = 2;<br>
+            { b = 4; console.log(b); } //Prints 4 <br>
+            console.log(b); // Prints 4 as well because b is a global scope and accessed inside the block and redeclared its value. This will happen when you don't use const or let keyword inside of a block.
+        </code>
+        <em>*See the console</em>
+    </section>
+    <section>
+        <h3>Direct Assignment VS. Assignment By Reference</h3>
+        <code style="display: block;">
+            /* Assigning a primitive value to a variable, any changes to that variable is made to its value */<br>
+
+            const a = 1; <br>
+            let b = a; // a = 1, b = 1 <br>
+            b = 2; // a = 1, b = 2
+        </code><br>
+        <code style="display: block;">
+            /* But if you assign non-primitive value to a variable, then it is done by reference */ <br>
+
+            const c = { value: 1 }; <br>
+            let d = c; // c.value = 1, d.value = 1 <br>
+            d.value = 2; // c.value = 2, d.value = 2
+        </code>
+    </section>
+    <section>
+        <h3>Functions</h3>
+        <p>There are many ways to declare functions in JS: Constructor funtion, function literal, arrow function, and the normal way to declare a function is:<br>
+            function functionName() {<br>
+                // function body<br>
+            }<br>
+        </p>
+        <p>
+            Declaring functions like the example above will make the function be hoisted automatically (you can call the funtion on any part of the program).
+        </p>
+
+        <h4>Callbacks</h4>
+        <p>
+            A function that is passed as an argument to another function is called callback.
+        </p>
+        <code>
+            funtion sing(song, callback) { <br>
+                // some code <br>
+                callback(); <br>
+            }
+        </code>
+    </section>
+</body>
+</html>

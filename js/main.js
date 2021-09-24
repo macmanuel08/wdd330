@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 label: "Week 01 Notes",
                 url: "w1/index.html"
+            },
+            {
+                label: "Week 02 Notes",
+                url: "w2/index.html"
             }
         ];
 
