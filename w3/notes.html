@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 03 Notes</title>
+
+    <script src="js/main.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        header {
+            background-color: rgb(173, 173, 255);
+            padding: 2rem;
+        }
+
+        main, section {
+            padding: 2rem;
+        }
+
+        p {
+            margin: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Week 03 Notes</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Objects</h2>
+            <p>Arrays and funtions are actually objects (see console).</p>
+            <p>Object literal in JS is a self-contained set of related values (properties) and funtions (methods).</p>
+            <p>In JS, you don't have to define a class to declare an object literal</p>
+            <p>Calling Methods using square bracket notation:<br> <code>superman['fly'](); //parenthesis needed outside the brackets. See the console</code></p>
+            <p>JS code can be use to be a property key: place them inside the square bracket<br><code>const hulk = { name: 'Hulk', ['catch' + 'Phrase']: 'Hulk Smash!' }; //(see console)</code></p>
+            <p>You can check if an object has a specific property and work with them:<br><code>for(const key in superman) {
+                if (superman.hasOwnProperty(key)) {
+                    console.log(key + ": " + superman[key]);
+                }
+             } // to check for its own prperties and log them on the console not including inherited properties
+            </code></p>
+            <h5>JSON</h5>
+            <p><code>parse()</code> takes a string of data in JSON format and returns a JS object.</p>
+            <p><code>stringify()</code> takes JS object and returns a <strong>string</strong> of JSON data.</p>
+        </section>
+        <section>
+            <h2>Document Object Model</h2>
+            <p>DOM represents an HTML document as a network of <strong>connected nodes</strong> that form like a tree structure (node tree).</p>
+            <p>A node is a <strong>basic data structure</strong> and it contains data that may link to other nodes.</p>
+            <p>The DOM treats everything on a web page as a node (e.g. HTML tags, content of the tags, attributes, etc.)</p>
+        </section>
+    </main>
+</body>
+</html>
