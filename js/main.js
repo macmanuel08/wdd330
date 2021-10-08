@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 label: "Week 02 Notes",
                 url: "w2/index.html"
+            },
+            {
+                label: "Week 03 Notes",
+                url: "w3/index.html"
+            },
+            {
+                label: "Week 04 Notes",
+                url: "w4/index.html"
             }
         ];
 
