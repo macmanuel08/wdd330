@@ -1,0 +1,46 @@
+<!doctype html>
+
+<body>
+    <h1>Mountains</h1>
+
+    <div id="mountains"></div>
+    
+    <script>
+        const MOUNTAINS = [
+            {name: "Kilimanjaro", height: 5895, place: "Tanzania"},
+            {name: "Everest", height: 8848, place: "Nepal"},
+            {name: "Mount Fuji", height: 3776, place: "Japan"},
+            {name: "Vaalserberg", height: 323, place: "Netherlands"},
+            {name: "Denali", height: 6168, place: "United States"},
+            {name: "Popocatepetl", height: 5465, place: "Mexico"},
+            {name: "Mont Blanc", height: 4808, place: "Italy/France"}
+        ];
+    
+        // Your code here
+    
+        const div = document.querySelector('#mountains');
+        const table = document.createElement('table');
+        const row = document.createElement('tr');
+        const columns = Object.keys(MOUNTAINS[0]);
+        for (column of columns) {
+            const cell = document.createElement('th');
+            cell.innerHTML = column.toUpperCase();
+            row.appendChild(cell);
+        }
+        
+        table.appendChild(row);
+
+        for (mountain of MOUNTAINS) {
+            const row = document.createElement('tr');
+            for (info in mountain) {
+                const cell = document.createElement('td');
+                cell.innerHTML = mountain[info];
+                row.appendChild(cell);
+            }
+            table.appendChild(row);
+        }
+
+        div.appendChild(table);
+    
+    </script>  
+</body>

@@ -2,20 +2,28 @@ document.addEventListener('DOMContentLoaded', function() {
     function recordContent() {
         const contents = [
             {
-                label: "Week 01 Notes",
+                label: "Week 01",
                 url: "w1/index.html"
             },
             {
-                label: "Week 02 Notes",
+                label: "Week 02",
                 url: "w2/index.html"
             },
             {
-                label: "Week 03 Notes",
+                label: "Week 03",
                 url: "w3/index.html"
             },
             {
-                label: "Week 04 Notes",
+                label: "Week 04",
                 url: "w4/index.html"
+            },
+            {
+                label: "Week 05",
+                url: "w5/index.html"
+            },
+            {
+                label: "Challenge One: Todo",
+                url: "ch1/index.html"
             }
         ];
 
