@@ -1,3 +1,49 @@
-.completed {
-    text-decoration: line-through;
+main {
+	width: 450px;
+	font-family: Helvetica, sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+label.completed {
+  text-decoration: line-through;
+}
+
+div.list {
+	border: 3px solid #666;
+}
+
+div.list ul {
+	padding: 0;
+	margin: 0;
+}
+
+div.list ul:last-child {
+	border-bottom: none;
+}
+
+div.list ul li {
+	display: flex;
+	list-style-type: none;
+	padding: 10px;
+	border-bottom: 3px solid #666;
+	display: block;
+}
+
+div.list ul li label {
+	width: 400px;
+}
+
+div.list ul li button {
+	margin-right: auto;
+}
+
+div.info {
+	padding: 10px;	
+}
+
+div.input {
+	margin-top: 50px;
 }
