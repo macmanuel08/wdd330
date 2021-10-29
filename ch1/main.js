@@ -1,10 +1,4 @@
-class Todos {
-  constructor(content) {
-      this.id = new Date();
-      this.content = content;
-      this.completed = false;
-  }
-}
+import Todos from 'todos.js';
 
 const addbtn = document.getElementById('addbtn');
 const input = document.getElementById('item');
