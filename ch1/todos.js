@@ -97,7 +97,7 @@ function renderOneToDo(task) {
   return `<li id="${task.id}" ${task.completed ? 'class="completed"' : ''}>
       <input name="${task.content}" type="checkbox" value="none" ${task.completed ? 'checked' : ''}>
       <p>${task.content}</p>
-      <div class="delete">❌</div>
+      <button class="delete">❌</button>
   </li>`;
 }
 

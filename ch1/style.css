@@ -28,6 +28,8 @@ div.list {
 div.list ul {
 	padding: 0;
 	margin: 0;
+	width: 424px;
+	list-style: none;
 }
 
 div.list ul:last-child {
@@ -35,26 +37,25 @@ div.list ul:last-child {
 }
 
 div.list ul li:nth-of-type(even) {
-	background-color: rgb(184, 184, 184);
+	background-color: #b8b8b8;
 }
 
 div.list ul li {
-	list-style-type: none;
 	padding: 10px;
 	border-bottom: 3px solid #666;
-	display: flex;
-	align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 8fr 1fr;
+	width: 100%;
 }
 
 div.list ul li p {
-	flex: 3;
+	margin: 0;
 }
 
 div.info {
 	padding: 10px;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 }
 
 
@@ -67,6 +68,11 @@ div.footer input {
 	width: 88%;
 }
 
-div.delete {
-	cursor: pointer;
+div#error {
+	color: #e60000;
+	margin-bottom: 5px;
+}
+
+ul#tasklist li input {
+	accent-color: #259125;
 }
