@@ -4,9 +4,7 @@ function qs(selector) {
 }
 
 function onTouch(elementSelector, callback) {
-  elementSelector.addEventListener('touchend', () => {
-    
-  });
+  qs(elementSelector).addEventListener('touchend', e => e.currentTarget.click(callback), false);
 }
 
 export {

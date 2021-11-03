@@ -1,80 +1,110 @@
-import {readFromLS, writeToLS} from 'ls.js';
-import {qs, onTouch} from 'utilities.js';
+import {readFromLS, writeToLS} from './ls.js';
+//  import * as uH from './utilities.js';
+
+let todoList = [];
 
 export default class Todos {
-  constructor() {
-    this.output = document.querySelector('#addlist');
-    this.key = 'todo';
-    this.data = document.querySelector('#item').value;
+  constructor(id) {
+    this.element = document.getElementById(id);
+    this.key = id;
+    this.error = document.querySelector('#error');
+    todoList = getToDo(this.key);
   }
-  addTodo() {
-    let task = this.data;
-    saveTodo(task, this.key);
-    let todos = getTodos(this.key);
-    
-
-    let button = qs('#addbtn');
+  showToDoList() {
+    renderTodoList(this.element, todoList);
+    this.addEventListeners();
   }
-  listTodos() {
-    
+  addToDo() {
+    this.error.innerHTML = '';
+    const todo = document.querySelector('#item');
+    if (todo.value === "") {
+      this.error.innerHTML = "Please enter a to-do item";
+      return;
+    }
+    saveTodo(todo, this.key);
+    this.showToDoList();
+  }
+  addEventListeners() {
+    const ls = Array.from(this.element.children);
+    ls.forEach(item => {
+      item.children[0].addEventListener('click', e => this.completeToDo(item.id));
+      item.children[2].addEventListener('click', e => this.removeItem(item.id));
+    });
+  }
+  completeToDo(itemId) {
+    let task = todoList.findIndex(task => task.id == itemId);
+    todoList[task].completed = !todoList[task].completed;
+    writeToLS(this.key, todoList);
+    markDone(itemId);
+  }
+  removeItem(itemId) {
+    let task = todoList.findIndex(task => task.id == itemId);
+    todoList.splice(task, 1);
+    writeToLS(this.key, todoList);
+    this.showToDoList();
+  }
+  filterToDos(category) {
+    category = filterBy(category);
+    const f = todoList.filter(task => (category != null) ? task.completed === category : task);
+    renderTodoList(this.element, f);
+    this.addEventListeners();
+  }
+  addTabListeners() {
+    const actionButtons = Array.from(document.querySelectorAll('.tab'));
+    actionButtons.forEach(tab => {
+      tab.addEventListener('click', e => {
+        for (let btn of actionButtons) {
+          btn.classList.remove('selected-tab');
+        }
+        e.currentTarget.classList.add('selected-tab');
+        this.filterToDos(e.currentTarget.id);
+      });
+    });
   }
 }
 
-let todoList = null;
+function filterBy(category){
+  switch(category){
+      case 'active':      return  false;
+      case 'complete':    return  true;
+      case 'all':         return  null;
+      default :           return  null;
+  }
+}
+
+function getToDo(key) {
+  let ls = readFromLS(key);
+  return ls === null ? [] : ls;
+}
 
 function saveTodo(task, key) {
-  let todo = {id: new Date(), content: task, completed: false};
-  writeToLS(key, todo);
+  let timestamp = Date.now();
+  const todo = {id: timestamp, content: task.value, completed: false};
   todoList.push(todo);
+  writeToLS(key, todoList);
+  task.value = "";
+  task.focus();
 }
 
-function getTodos(key) {
-  if (todoList == null) {
-    let todos = readFromLS(key);
-    return todos;
-  }
+function renderTodoList(ul, list) {
+  ul.innerHTML = "";
+
+  list.forEach(taskObject => ul.innerHTML += renderOneToDo(taskObject));
+  updateCount(list);
 }
 
-let element = qs('#addlist');
+function renderOneToDo(task) {
+  return `<li id="${task.id}" ${task.completed ? 'class="completed"' : ''}>
+      <input name="${task.content}" type="checkbox" value="none" ${task.completed ? 'checked' : ''}>
+      <p>${task.content}</p>
+      <div class="delete">❌</div>
+  </li>`;
+}
 
-function renderTodoList(list, element) {
-  let output = qs(element);
-  list.foreach(task => {
-    
-    let li = document.createElement('li');
-    let deletebutton = document.createElement('button');
-    let checkbox = document.createElement('input')
-    let label = document.createElement('label');
+function updateCount(ls){
+  document.getElementById('taskstatus').innerHTML =  `${(ls != null) ? ls.length : 0}  tasks left`;
+}
 
-    checkbox.setAttribute('type', 'checkbox');
-
-    label.textContent = task.content;
-
-    checkbox.addEventListener('change', () => {
-
-        if (checkbox.checked) {
-            label.classList.add('completed');
-        } else {
-            label.classList.remove('completed');
-        }
-    });
-
-    li.append(checkbox);
-    li.append(label);
-
-    
-
-    deletebutton.textContent = '❌';
-
-    li.append(deletebutton);
-    
-    deletebutton.addEventListener('click', () => {
-        output.removeChild(li);
-        input.focus;
-    });
-    input.value = '';
-    input.focus;
-
-    output.append(li);
-  });
+function markDone(itemId){
+  document.getElementById(itemId).classList.toggle('completed');
 }

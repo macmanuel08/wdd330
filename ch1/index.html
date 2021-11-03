@@ -11,21 +11,26 @@
 </head>
 <body>
     <main>
-        <h1>To Do List</h1>
-        <div class="list">
-            <ul id="addlist">
+        <div>
+            <h1>To Do List</h1>
+            <div class="list">
+                <ul id="tasklist">
 
-            </ul>
-            <div class="info">
-                <span id="status"></span>
-                <button type="button" id="all">All</button>
-                <button type="button" id="active">Active</button>
-                <button type="button" id="completed">Completed</button>
+                </ul>
+                <div class="info">
+                    <span id="taskstatus"></span>
+                    <span>
+                        <button type="button" class="tab selected-tab" id="all">All</button>
+                        <button type="button" class="tab" id="active">Active</button>
+                        <button type="button" class="tab" id="complete">Completed</button>
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="input">
-            <input type="text" id="item">
-            <button type="button" id="addbtn">➕</button>
+            <div class="footer">
+                <input type="text" id="item" placeholder="Enter New Task Here">
+                <button type="button" id="addbtn">➕</button>
+                <span id="error"></span>
+            </div>
         </div>
     </main>
 </body>

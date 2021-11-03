@@ -1,13 +1,23 @@
+body {
+	display: flex;
+	justify-content: center;
+}
+
 main {
-	width: 450px;
+	width: 460px;
 	font-family: Helvetica, sans-serif;
+}
+
+main div {
+	max-width: 450px;
+	min-width: 430px;
 }
 
 h1 {
 	text-align: center;
 }
 
-label.completed {
+li.completed p {
   text-decoration: line-through;
 }
 
@@ -24,26 +34,39 @@ div.list ul:last-child {
 	border-bottom: none;
 }
 
+div.list ul li:nth-of-type(even) {
+	background-color: rgb(184, 184, 184);
+}
+
 div.list ul li {
-	display: flex;
 	list-style-type: none;
 	padding: 10px;
 	border-bottom: 3px solid #666;
-	display: block;
+	display: flex;
+	align-items: center;
 }
 
-div.list ul li label {
-	width: 400px;
-}
-
-div.list ul li button {
-	margin-right: auto;
+div.list ul li p {
+	flex: 3;
 }
 
 div.info {
-	padding: 10px;	
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-div.input {
+
+div.footer {
 	margin-top: 50px;
+}
+
+div.footer input {
+	padding: 3px;
+	width: 88%;
+}
+
+div.delete {
+	cursor: pointer;
 }
