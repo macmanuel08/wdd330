@@ -24,6 +24,14 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 label: "Challenge One: Todo",
                 url: "ch1/index.html"
+            },
+            {
+                label: "Week 09",
+                url: "w9/index.html"
+            },
+            {
+                label: "Week 10",
+                url: "w10/index.html"
             }
         ];
 
