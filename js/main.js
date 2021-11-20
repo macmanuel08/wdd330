@@ -32,6 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 label: "Week 10",
                 url: "w10/index.html"
+            },
+            {
+                label: "Earthquake Watch",
+                url: "quake/index.html"
             }
         ];
 
