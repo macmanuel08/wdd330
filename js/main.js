@@ -36,6 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 label: "Earthquake Watch",
                 url: "quake/index.html"
+            },
+            {
+                label: "Final Project - COVID API",
+                url: "covid19-api/index.html"
             }
         ];
 
