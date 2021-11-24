@@ -1,0 +1,41 @@
+$dark-orange: #f55700;
+$light-orange: #ff6d06;
+$dark-blue: #1100a1;
+$light-blue: #452fff;
+$dark-red: #af1414;
+
+/* Search Icon */
+.search-button {
+  outline: none;
+  border: 1px solid $light-blue;
+  background: #fff;
+  padding: 5px;
+  width: 30px;
+}
+#search-icon {
+  font-size: 20px;
+  display: inline-block;
+  width: 10px;
+  box-sizing: content-box;
+  height: 10px;
+  border: 0.1em solid $light-blue;
+  position: relative;
+  border-radius: 0.35em;
+}
+#search-icon:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: -0.25em;
+  bottom: -0.1em;
+  border-width: 0;
+  background: $light-blue;
+  width: 7px;
+  height: 2px;
+  transform: rotate(45deg);
+}
+
+/* Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+body {font-family: 'Noto Sans', Helvetica, sans-serif;}
