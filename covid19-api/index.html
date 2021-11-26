@@ -7,15 +7,16 @@
   <title>COVID-19 Worldwide Data</title>
 
   <link rel="stylesheet" href="styles.css">
-  <script src="js/main.js" type="module" defer></script>
+  <script src="js/main.js" type="module"></script>
 </head>
 <body>
   <main>
     <h1>Live COVID-19 Data</h1>
     <div class="search-container">
-      <input id="search-input" class="search-input" type="search" id="input" placeholder="Search Country">
-      <button class="search-button" id="search-btn"><div id="search-icon"></div></button>
+        <input id="input" class="input" type="text" placeholder="Search Country" />
+        <button class="search-button" type="button" id="search-btn"><div id="search-icon"></div></button>
     </div>
+    <div id="error-container" class="error"></div>
     <div id="search-data-container"></div>
     <div id="worldwide-data-container"></div>
   </main>
