@@ -1,7 +1,9 @@
 export default class Covid {
   constructor() {
     this.error = document.getElementById('error-container');
+    this.result = document.querySelector('.search-result');
     this.searchContainer = document.getElementById('search-data-container');
+    this.searchHeading =  document.getElementById('search-header');
   }
   renderData(data) {
     const newConfirmed = data.NewConfirmed;
@@ -21,31 +23,30 @@ export default class Covid {
     `;
   }
   searchInput(inputValue, countries) {
-    let uppercasedInput = changeToUppercase(inputValue);
-    let searchedData = filterCountries(uppercasedInput, countries);
+    let searchedData = filterCountries(inputValue, countries);
     if (searchedData[0] == null) {
       this.error = this.showError();
     } else {
-      this.showData(searchedData[0]);
+      this.showData(searchedData[0], searchedData[0].Country);
     }
   }
   showError() {
     this.error.innerHTML = 'Please enter a valid country';
   }
-  showData(data) {
+  showData(data, country) {
     this.searchContainer.innerHTML = this.renderData(data);
+    this.showSearchedData(country);
+  }
+  showSearchedData(country) {
+    showHeading(this.searchHeading ,country);
+    this.result.classList.add('show');
   }
 }
 
-function changeToUppercase(string) {
-  let uppercased = string.replace(
-    /(^\w{1})|(\s+\w{1})/g,
-    (letter) => letter.toUpperCase()
-  );
-
-  return uppercased;
+function filterCountries(searchedCountry, countries) {
+  return countries.filter(country => country.Country == searchedCountry || country.CountryCode == searchedCountry || country.Slug == searchedCountry);
 }
 
-function filterCountries(searchedCountry, countries) {
-  return countries.filter(country => country.Country == searchedCountry);
+function showHeading(container ,country) {
+  container.innerHTML = `Data for ${country}`;
 }

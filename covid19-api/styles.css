@@ -1,5 +1,23 @@
-/* Search Icon */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+body {
+  text-align: center;
+}
+
+.world-result {
+  border: 3px solid #1100a1;
+  margin: 20px auto;
+  max-width: 300px;
+}
+
+.search-result {
+  display: none;
+}
+
+.search-result.show {
+  display: block;
+}
+
+/* Search Icon */
 .search-button {
   outline: none;
   border: 1px solid #452fff;
@@ -30,6 +48,24 @@
   width: 7px;
   height: 2px;
   transform: rotate(45deg);
+}
+
+/* Input */
+.search-container {
+  display: flex;
+}
+.search-container .input {
+  border: 1px solid #452fff;
+  width: 100%;
+  margin-left: 10px;
+}
+.search-container .input:focus {
+  outline: none;
+  box-shadow: -5px 5px 6px -2px #452fff;
+}
+.search-container .search-button {
+  margin-left: -1px;
+  margin-right: 10px;
 }
 
 /* Font */

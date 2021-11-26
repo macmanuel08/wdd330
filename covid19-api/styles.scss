@@ -1,3 +1,6 @@
+@import 'layout';
+@import 'animation';
+
 $dark-orange: #f55700;
 $light-orange: #ff6d06;
 $dark-blue: #1100a1;
@@ -33,6 +36,25 @@ $dark-red: #af1414;
   width: 7px;
   height: 2px;
   transform: rotate(45deg);
+}
+
+/* Input */
+.search-container {
+  display: flex;
+  .input {
+    border: 1px solid $light-blue;
+    width: 100%;
+    margin-left: 10px;
+
+    &:focus {
+      outline: none;
+      box-shadow: -5px 5px 6px -2px $light-blue;
+    }
+  }
+  .search-button {
+    margin-left: -1px;
+    margin-right: 10px;
+  }
 }
 
 /* Font */

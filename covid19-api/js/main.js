@@ -7,7 +7,6 @@ const covid = new Covid();
 
 const covidData = await getJSON(url);
 const countries = covidData.Countries;
-console.log(countries)
 
 const errorContainer =document.getElementById('error-container')
 const worldwideContainer = document.getElementById('worldwide-data-container');

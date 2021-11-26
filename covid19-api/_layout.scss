@@ -1,0 +1,17 @@
+$dark-orange: #f55700;
+$light-orange: #ff6d06;
+$dark-blue: #1100a1;
+$light-blue: #452fff;
+$dark-red: #af1414;
+
+body {
+  text-align: center;
+}
+
+.world-result {
+  border: 3px solid $dark-blue;
+  margin: 20px auto;
+  max-width: 300px;
+}
+
+.search-result {display: none;}
