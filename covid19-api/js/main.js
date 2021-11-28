@@ -3,8 +3,6 @@ import { getJSON } from "./helper.js";
 
 const url = 'https://api.covid19api.com/summary';
 
-const covid = new Covid();
-
 const covidData = await getJSON(url);
 const countries = covidData.Countries;
 
@@ -13,9 +11,11 @@ const worldwideContainer = document.getElementById('worldwide-data-container');
 const input = document.getElementById('input');
 const submit = document.getElementById('search-btn');
 
+const covid = new Covid();
+
 input.addEventListener('keyup', (e) => {
-  errorContainer.innerHTML = "";
   if (e.key == 'Enter') {
+    errorContainer.innerHTML = "";
     let inputValue = input.value;
     covid.searchInput(inputValue, countries);
     input.value = "";

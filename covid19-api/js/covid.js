@@ -1,9 +1,9 @@
 export default class Covid {
   constructor() {
-    this.error = document.getElementById('error-container');
     this.result = document.querySelector('.search-result');
     this.searchContainer = document.getElementById('search-data-container');
     this.searchHeading =  document.getElementById('search-header');
+    this.error = document.getElementById('error-container');
   }
   renderData(data) {
     const newConfirmed = data.NewConfirmed;
@@ -25,13 +25,13 @@ export default class Covid {
   searchInput(inputValue, countries) {
     let searchedData = filterCountries(inputValue, countries);
     if (searchedData[0] == null) {
-      this.error = this.showError();
+      this.error.innerHTML = this.showError();
     } else {
       this.showData(searchedData[0], searchedData[0].Country);
     }
   }
   showError() {
-    this.error.innerHTML = 'Please enter a valid country';
+    return 'Please enter a valid country';
   }
   showData(data, country) {
     this.searchContainer.innerHTML = this.renderData(data);
