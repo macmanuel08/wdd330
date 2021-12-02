@@ -1,6 +1,8 @@
+import { readFromLS, writeToLS } from "./ls.js";
+
 export default class Covid {
   constructor() {
-    this.result = document.querySelector('.search-result');
+    this.result = document.getElementById('result-container');
     this.searchContainer = document.getElementById('search-data-container');
     this.searchHeading =  document.getElementById('search-header');
     this.error = document.getElementById('error-container');
@@ -24,14 +26,24 @@ export default class Covid {
   }
   searchInput(inputValue, countries) {
     let searchedData = filterCountries(inputValue, countries);
-    if (searchedData[0] == null) {
-      this.error.innerHTML = this.showError();
+    if (searchedData[0] == null || inputValue == "") {
+      this.error.innerHTML = this.showError(inputValue);
     } else {
       this.showData(searchedData[0], searchedData[0].Country);
+      this.saveSearch(inputValue);
     }
   }
-  showError() {
-    return 'Please enter a valid country';
+  showError(inputValue) {
+    if (inputValue == "") {
+      return "Please Enter Name of a Country";
+    } else if (inputValue.length == 2 || inputValue.length == 3) {
+      return "Capitalize country's two letter abbreviation (e.g US for USA)"; 
+    } else {
+      return `<ul>
+                <li>Please enter a valid country</li>
+                <li>Check the spelling</li>
+              </ul>`; 
+    }
   }
   showData(data, country) {
     this.searchContainer.innerHTML = this.renderData(data);
@@ -40,6 +52,21 @@ export default class Covid {
   showSearchedData(country) {
     showHeading(this.searchHeading ,country);
     this.result.classList.add('show');
+    this.result.classList.add('fade-in');
+    setTimeout(() => {
+      this.result.classList.remove('fade-in');
+    }, 1000);
+  }
+  saveSearch(inputValue) {
+    const key = 'recentSearches';
+    const recentSearches = getToDo(key);
+    if (recentSearches.length == 5) {
+      recentSearches.shift();
+      recentSearches.push(inputValue);
+    } else {
+      recentSearches.push(inputValue);
+    }
+    writeToLS(key, recentSearches);
   }
 }
 
@@ -49,4 +76,9 @@ function filterCountries(searchedCountry, countries) {
 
 function showHeading(container ,country) {
   container.innerHTML = `Data for ${country}`;
+}
+
+function getToDo(key) {
+  let ls = readFromLS(key);
+  return ls === null ? [] : ls;
 }

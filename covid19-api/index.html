@@ -12,15 +12,16 @@
 <body>
   <main>
     <h1>Live COVID-19 Data</h1>
+    <div id="error-container" class="error"></div>
     <div class="search-container">
         <input id="input" class="input" type="text" placeholder="Search Country" />
         <button class="search-button" type="button" id="search-btn"><div id="search-icon"></div></button>
     </div>
-    <div id="error-container" class="error"></div>
-    <div class="search-result">
+    <div class="search-result" id="result-container">
       <h3 id="search-header"></h3>
       <div id="search-data-container"></div>
     </div>
+    <div class="searches" id="searches"><button id="show-searches">Show Recent Searches</button></div>
     <div class="world-result">
       <h3>Worldwide Data</h3>
       <div id="worldwide-data-container"></div>
