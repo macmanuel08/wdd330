@@ -1,16 +1,69 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400&family=Rubik:wght@300;500&display=swap");
+h1 {
+  color: #1100a1;
+}
+
+h3, h5 {
+  background: #1100a1;
+  color: #fff;
+}
+
+.data {
+  color: #fff;
+}
+
+.new-confirmed .data, .total-confirmed .data {
+  background: #f55700;
+  border-color: #f55700;
+}
+
+.new-deaths .data, .total-deaths .data {
+  background: #af1414;
+  border-color: #af1414;
+}
+
+.new-recovered .data, .total-recovered .data {
+  background: #452fff;
+  border-color: #452fff;
+}
+
 body {
   text-align: center;
 }
 
-.world-result {
+.container {
+  margin: 2rem;
   border: 3px solid #1100a1;
   margin: 20px auto;
   max-width: 300px;
 }
+.container div {
+  padding: 1rem;
+}
 
 .search-result {
   display: none;
+}
+
+.searches {
+  height: 130px;
+}
+
+h3, h5 {
+  margin: 0;
+  padding: 2rem;
+  letter-spacing: 1px;
+}
+
+h6 {
+  margin-bottom: 3px;
+}
+
+.data {
+  border: 1px solid;
+  border-radius: 999px;
+  width: 80px;
+  margin: 0 auto;
 }
 
 .search-result.show {
@@ -31,6 +84,34 @@ body {
     transform: translateY(0px);
   }
 }
+h1 {
+  color: #1100a1;
+}
+
+h3, h5 {
+  background: #1100a1;
+  color: #fff;
+}
+
+.data {
+  color: #fff;
+}
+
+.new-confirmed .data, .total-confirmed .data {
+  background: #f55700;
+  border-color: #f55700;
+}
+
+.new-deaths .data, .total-deaths .data {
+  background: #af1414;
+  border-color: #af1414;
+}
+
+.new-recovered .data, .total-recovered .data {
+  background: #452fff;
+  border-color: #452fff;
+}
+
 /* Search Icon */
 .search-button {
   outline: none;
@@ -83,8 +164,14 @@ body {
 }
 
 /* Font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Rubik", Helvetica, sans-serif;
+  font-weight: 600;
+}
+
 body {
-  font-family: "Noto Sans", Helvetica, sans-serif;
+  font-family: "Quicksand", sans-serif;
+  font-size: 400;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,11 +1,6 @@
 @import 'layout';
 @import 'animation';
-
-$dark-orange: #f55700;
-$light-orange: #ff6d06;
-$dark-blue: #1100a1;
-$light-blue: #452fff;
-$dark-red: #af1414;
+@import 'colors';
 
 /* Search Icon */
 .search-button {
@@ -59,5 +54,7 @@ $dark-red: #af1414;
 
 /* Font */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
-body {font-family: 'Noto Sans', Helvetica, sans-serif;}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&family=Rubik:wght@300;500&display=swap');
+h1, h2, h3, h4, h5, h6 {font-family: 'Rubik', Helvetica, sans-serif; font-weight: 600;}
+
+body {font-family: 'Quicksand', sans-serif; font-size: 400;}

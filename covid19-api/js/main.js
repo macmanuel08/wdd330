@@ -41,14 +41,11 @@ worldwideContainer.innerHTML = covid.renderData(covidData.Global);
 function displayRecents() {
   searchesContainer.innerHTML = "";
   const recents = readFromLS(key);
-  const div = document.createElement('div')
-  const h6 = document.createElement('h6');
-  h6.innerHTML = 'You Recently Searched for:';
-  div.append(h6);
-  for (let recent of recents) {
-    const br = document.createElement('br')
-    div.append(recent);
-    div.append(br);
+  if (recents != null) {
+    for (let recent of recents) {
+      const br = document.createElement('br')
+      searchesContainer.append(recent);
+      searchesContainer.append(br);
+    } 
   }
-  searchesContainer.append(div);
 }

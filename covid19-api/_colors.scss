@@ -1,0 +1,32 @@
+$dark-orange: #f55700;
+$light-orange: #ff6d06;
+$dark-blue: #1100a1;
+$light-blue: #452fff;
+$dark-red: #af1414;
+$white: #fff;
+
+h1 {color: $dark-blue;}
+
+h3, h5 {
+  background: $dark-blue;
+  color: $white;
+}
+
+.data {
+  color: $white;
+}
+
+.new-confirmed .data, .total-confirmed .data {
+  background: $dark-orange;
+  border-color: $dark-orange;
+}
+
+.new-deaths .data, .total-deaths .data {
+  background: $dark-red;
+  border-color: $dark-red;
+}
+
+.new-recovered .data, .total-recovered .data {
+  background: $light-blue;
+  border-color: $light-blue;
+}

@@ -1,19 +1,38 @@
-$dark-orange: #f55700;
-$light-orange: #ff6d06;
-$dark-blue: #1100a1;
-$light-blue: #452fff;
-$dark-red: #af1414;
+@import 'colors';
+
+$outer-margin: 2rem;
+$outer-padding: 1rem;
 
 body {
   text-align: center;
 }
 
-.world-result {
+.container {
+  margin: $outer-margin;
   border: 3px solid $dark-blue;
   margin: 20px auto;
   max-width: 300px;
+  
+  div {
+    padding: $outer-padding;
+  }
 }
 
 .search-result {display: none;}
 
-.searches {height: 115px;}
+.searches {height: 130px;}
+
+h3, h5 {
+  margin: 0;
+  padding: 2rem;
+  letter-spacing: 1px;
+}
+
+h6 {margin-bottom: 3px;}
+
+.data {
+  border: 1px solid;
+  border-radius: 999px;
+  width: 80px;
+  margin: 0 auto;
+}

@@ -16,12 +16,12 @@ export default class Covid {
     const totalRecovered = data.TotalRecovered;
   
     return `
-        <div class="new-confirmed"><h6>New Confirmed</h6><div>${newConfirmed}</div></div>
-        <div class="new-deaths"><h6>New Deaths</h6><div>${newDeaths}</div></div>
-        <div class="new-recovered"><h6>New Recovered</h6><div>${newRecovered}</div></div>
-        <div class="total-confirmed"><h6>Total Confirmed</h6><div>${totalConfirmed}</div></div>
-        <div class="total-deaths"><h6>Total Deaths</h6><div>${totalDeaths}</div></div>
-        <div class="total-recovered"><h6>Total Recovered</h6><div>${totalRecovered}</div></div>
+        <div class="new-confirmed"><h6>New Confirmed</h6><div class="data">${newConfirmed}</div></div>
+        <div class="new-deaths"><h6>New Deaths</h6><div class="data">${newDeaths}</div></div>
+        <div class="new-recovered"><h6>New Recovered</h6><div class="data">${newRecovered}</div></div>
+        <div class="total-confirmed"><h6>Total Confirmed</h6><div class="data">${totalConfirmed}</div></div>
+        <div class="total-deaths"><h6>Total Deaths</h6><div class="data">${totalDeaths}</div></div>
+        <div class="total-recovered"><h6>Total Recovered</h6><div class="data">${totalRecovered}</div></div>
     `;
   }
   searchInput(inputValue, countries) {
