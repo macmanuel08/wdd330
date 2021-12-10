@@ -7,7 +7,6 @@ const url = 'https://api.covid19api.com/summary';
 const covidData = await getJSON(url);
 const countries = covidData.Countries;
 
-const recentSearchesBTN = document.getElementById('show-searches');
 const key = 'recentSearches';
 const searchesContainer = document.getElementById('searches');
 const errorContainer =document.getElementById('error-container')
@@ -33,16 +32,23 @@ submit.addEventListener('click', () => {
   input.value = "";
 });
 
+setInterval(() => {
+  displayRecents();
+}, 1000);
+
 worldwideContainer.innerHTML = covid.renderData(covidData.Global);
 
-recentSearchesBTN.addEventListener('click', () => {
+function displayRecents() {
   searchesContainer.innerHTML = "";
   const recents = readFromLS(key);
-  const ul = document.createElement('ul')
+  const div = document.createElement('div')
+  const h6 = document.createElement('h6');
+  h6.innerHTML = 'You Recently Searched for:';
+  div.append(h6);
   for (let recent of recents) {
-    const li = document.createElement('li')
-    li.append(recent);
-    ul.append(li);
+    const br = document.createElement('br')
+    div.append(recent);
+    div.append(br);
   }
-  searchesContainer.append(ul);
-});
+  searchesContainer.append(div);
+}
