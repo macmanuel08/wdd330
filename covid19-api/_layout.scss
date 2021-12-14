@@ -36,3 +36,49 @@ h6 {margin-bottom: 3px;}
   width: 80px;
   margin: 0 auto;
 }
+
+@media (min-width: 770px) {
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    
+  }
+
+  .error {
+    grid-column: 1 / 2;
+  }
+
+  .search-container {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .show.search-result {
+    grid-column: 1 / 2;
+    grid-row: 3 / span 3;
+    max-width: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+  }
+
+  .searches-container {
+    grid-column: 2 / 3;
+    grid-row: 1 / span 3;
+  }
+  .world-result {
+    grid-column: 2 / 3;
+    grid-row: 4;
+  }
+  .container {margin: 15px;}
+
+  #search-data-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 3px solid #1100a1;
+  }
+}

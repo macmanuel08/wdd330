@@ -4,6 +4,7 @@ $dark-blue: #1100a1;
 $light-blue: #452fff;
 $dark-red: #af1414;
 $white: #fff;
+$error-red: #fc2828;
 
 h1 {color: $dark-blue;}
 
@@ -29,4 +30,9 @@ h3, h5 {
 .new-recovered .data, .total-recovered .data {
   background: $light-blue;
   border-color: $light-blue;
+}
+
+.error {
+  color: $error-red;
+  margin: 1rem;
 }
