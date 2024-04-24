@@ -44,6 +44,7 @@ div.list ul li {
 	padding: 10px;
 	border-bottom: 3px solid #666;
 	display: grid;
+	align-items: center;
 	grid-template-columns: 1fr 8fr 1fr;
 	width: 100%;
 }
